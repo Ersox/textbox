@@ -1,8 +1,9 @@
-use ab_glyph::{FontArc, PxScale};
+use ab_glyph::{FontArc, FontRef, PxScale};
 use pixelset::Color;
 
 pub use crate::textarea::align::Align;
 
+mod text;
 mod lines;
 mod size;
 mod align;
