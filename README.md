@@ -37,3 +37,11 @@ let render = TextBoxRender::new()
     .text("name", "Germany");
 let img = text_box.render(render)?;
 ```
+
+--
+
+## Design
+
+`TextBox` is dependent on the `image`, `imageproc` and `ab_glyph` crates. The goal is to make it easy to create reusable containers for slotting images and text into predictable slots.
+
+Text fields allow for a subset of markdown styles if the provided font is a _variable font_, like Roboto Flex. Bold, italic, and colored styles are usable. Colored styles use Markdown link syntax, i.e. `[Colored Text](#FF0000)`, since static images could never be clickable links anyway. If the font doesn't support those features, all styles will be ignored.
