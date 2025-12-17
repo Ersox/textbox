@@ -20,8 +20,8 @@ Once the template is defined, you can fill in content at runtime with a `TextBox
 ```rs
 let mut template: DynamicImage = /* ... */;
 let text_box = TextBox::new(template)
-    .add_image_component("flag", ImageArea::new((0, 0)))
-    .add_text_component("name", TextArea::new(
+    .image_component("flag", ImageArea::new((0, 0)))
+    .text_component("name", TextArea::new(
         (0, 200),
         400,
         BLACK,
@@ -33,7 +33,7 @@ let text_box = TextBox::new(template)
 let flag: DynamicImage = /* ... */;
 
 let render = TextBoxRender::new()
-    .put_image("flag", flag)
-    .put_text("name", "Germany");
+    .image("flag", flag)
+    .text("name", "Germany");
 let img = text_box.render(render)?;
 ```

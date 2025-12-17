@@ -540,13 +540,23 @@ dependencies = [
 
 [[package]]
 name = "mapgen-textbox"
-version = "0.4.3"
+version = "0.5.0"
 dependencies = [
  "ab_glyph",
  "image",
  "imageproc",
+ "markdown",
  "pixelset",
  "thiserror",
+]
+
+[[package]]
+name = "markdown"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5cab8f2cadc416a82d2e783a1946388b31654d391d1c7d92cc1f03e295b1deb"
+dependencies = [
+ "unicode-id",
 ]
 
 [[package]]
@@ -745,9 +755,9 @@ checksum = "35fb2e5f958ec131621fdd531e9fc186ed768cbe395337403ae56c17a74c68ec"
 
 [[package]]
 name = "pixelset"
-version = "0.2.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "228ad63397ca3df7ef0c7cd882d79e373a0023fc8f0b401a4e80488decab86c2"
+checksum = "bfab1ce9fa090965bf9294c952243db01e30117225d33953fbf26cec0dde3466"
 dependencies = [
  "image",
  "radsort",
@@ -1116,6 +1126,12 @@ name = "typenum"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "562d481066bde0658276a35467c4af00bdc6ee726305698a55b86e61d7ad82bb"
+
+[[package]]
+name = "unicode-id"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "70ba288e709927c043cbe476718d37be306be53fb1fafecd0dbe36d072be2580"
 
 [[package]]
 name = "unicode-ident"

@@ -31,7 +31,7 @@ impl TextBoxRender {
     /// Inserts a text value for the component with the given name.
     ///
     /// Returns `self` to support method chaining.
-    pub fn put_text(mut self, name: &str, value: &str) -> Self {
+    pub fn text(mut self, name: &str, value: &str) -> Self {
         self.map.insert(
             name.to_owned(),
             TextBoxComponentValue::Text(value.to_owned())
@@ -42,7 +42,7 @@ impl TextBoxRender {
     /// Inserts an image value for the component with the given name.
     ///
     /// Returns `self` to support method chaining.
-    pub fn put_image(mut self, name: &str, image: DynamicImage) -> Self {
+    pub fn image(mut self, name: &str, image: DynamicImage) -> Self {
         self.map.insert(
             name.to_owned(),
             TextBoxComponentValue::Image(image)

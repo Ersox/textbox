@@ -40,7 +40,7 @@ impl TextBox {
     }
 
     /// Adds a text component with the given `name` and rendering `area`.
-    pub fn add_text_component(mut self, name: &str, area: TextArea) -> Self {
+    pub fn text_component(mut self, name: &str, area: TextArea) -> Self {
         self.components.push(TextBoxComponent::Text(TextComponent {
             name: name.to_owned(),
             area
@@ -49,7 +49,7 @@ impl TextBox {
     }
 
     /// Adds an image component with the given `name` and overlay `area`.
-    pub fn add_image_component(mut self, name: &str, area: ImageArea) -> Self {
+    pub fn image_component(mut self, name: &str, area: ImageArea) -> Self {
         self.components.push(TextBoxComponent::Image(ImageComponent {
             name: name.to_owned(),
             area
