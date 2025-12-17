@@ -1,6 +1,6 @@
 use imageproc::drawing::text_size;
 
-use crate::textarea::TextArea;
+use crate::textarea::{TextArea, text::Text};
 
 /// The bounds of generated text.
 pub struct Bounds {
@@ -12,8 +12,8 @@ pub struct Bounds {
 
 impl TextArea {
     /// Returns the pixel size of the given text at this scale.
-    pub fn size(&self, text: &str) -> Bounds {
-        let (width, height) = text_size(self.scale, &self.font, text);
+    pub fn size(&self, text: impl ToString) -> Bounds {
+        let (width, height) = text_size(self.scale, &self.font, &text.to_string());
         Bounds {
             width,
             height

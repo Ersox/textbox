@@ -73,7 +73,7 @@ impl TextBox {
                                 expected: "text"
                             }
                         )?;
-                    component.area.draw(&mut image, &value);
+                    component.area.draw(&mut image, &value)?;
                 },
                 TextBoxComponent::Image(component) => {
                     let value = value.as_image()
