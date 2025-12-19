@@ -1,6 +1,6 @@
 use imageproc::drawing::text_size;
 
-use crate::textarea::{TextArea, text::Text};
+use crate::textarea::TextArea;
 
 /// The bounds of generated text.
 pub struct Bounds {

@@ -1,4 +1,3 @@
-use markdown::{mdast::{Node, Paragraph}, to_mdast};
 
 mod char;
 mod formatting;

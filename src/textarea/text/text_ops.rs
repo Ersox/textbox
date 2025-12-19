@@ -2,7 +2,7 @@ use std::{error::Error, fmt::{self, Display, Formatter, Write}, vec};
 
 use markdown::to_mdast;
 
-use crate::textarea::text::{Text, char::Char, error::AddNodeError, formatting::CharFormatting};
+use crate::textarea::text::{Text, char::Char, formatting::CharFormatting};
 
 impl Text {
     /// Parses a string (Markdown supported) into a `Text` structure.

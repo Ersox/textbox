@@ -1,4 +1,4 @@
-use ab_glyph::{FontArc, FontRef, PxScale};
+use ab_glyph::{FontArc, PxScale};
 use pixelset::Color;
 
 pub use crate::textarea::align::Align;
