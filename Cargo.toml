@@ -1,5 +1,9 @@
 [package]
 name = "textbox"
+description = "An elegant utility for slotting text/images into named slots in templates."
+license = "MIT"
+repository = "https://github.com/Ersox/textbox"
+authors = [ "Ersox" ]
 version = "0.5.0"
 edition = "2024"
 
