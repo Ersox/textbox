@@ -1,6 +1,6 @@
 # TextBox
 
-An elegant utility for constructing templates that can have text or images slotted into an existing layout for the Mapgen project.
+An elegant utility for constructing templates that can have text or images slotted into an existing layout.
 
 ---
 
@@ -8,8 +8,8 @@ An elegant utility for constructing templates that can have text or images slott
 
 `TextBox` lets you define a **template image** and place named components on it:
 
-* **Text components** (`TextArea`) for rendering text
-* **Image components** (`ImageArea`) for overlaying images
+- **Text components** (`TextArea`) for rendering text
+- **Image components** (`ImageArea`) for overlaying images
 
 Once the template is defined, you can fill in content at runtime with a `TextBoxRender`.
 

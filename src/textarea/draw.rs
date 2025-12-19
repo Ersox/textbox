@@ -39,7 +39,7 @@ impl TextArea {
 
             draw_text_mut(
                 image, 
-                char.formatting.color.unwrap_or(self.color).0, 
+                char.formatting.color.unwrap_or(self.color).into(), 
                 x, y, 
                 self.scale, 
                 &font, 

@@ -539,18 +539,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "mapgen-textbox"
-version = "0.5.0"
-dependencies = [
- "ab_glyph",
- "image",
- "imageproc",
- "markdown",
- "pixelset",
- "thiserror",
-]
-
-[[package]]
 name = "markdown"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -755,9 +743,9 @@ checksum = "35fb2e5f958ec131621fdd531e9fc186ed768cbe395337403ae56c17a74c68ec"
 
 [[package]]
 name = "pixelset"
-version = "0.5.0"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "07f15b8df5484f7007ebbcdfe9589f3050b397d51cbfe7158e376289e906a310"
+checksum = "121362d3b847cba4d0b713391241bb0f9f0a496d97d1b4b1ab0363d0a5eb1f63"
 dependencies = [
  "image",
  "radsort",
@@ -1080,6 +1068,18 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
+]
+
+[[package]]
+name = "textbox"
+version = "0.5.0"
+dependencies = [
+ "ab_glyph",
+ "image",
+ "imageproc",
+ "markdown",
+ "pixelset",
+ "thiserror",
 ]
 
 [[package]]
