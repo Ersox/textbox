@@ -1,4 +1,4 @@
-# TextBox
+# `textbox`
 
 An elegant utility for constructing templates that can have text or images slotted into an existing layout.
 
@@ -6,12 +6,12 @@ An elegant utility for constructing templates that can have text or images slott
 
 ## Overview
 
-`TextBox` lets you define a **template image** and place named components on it:
+By initializing a `TextBox`, you can define a **template image** and place named components on it:
 
 - **Text components** (`TextArea`) for rendering text
 - **Image components** (`ImageArea`) for overlaying images
 
-Once the template is defined, you can fill in content at runtime with a `TextBoxRender`.
+Once the template is defined, you can fill in content at runtime with a `TextBoxRender`, placing text and images in predictable slots.
 
 ---
 
