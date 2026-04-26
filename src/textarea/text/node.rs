@@ -7,10 +7,15 @@ use crate::textarea::text::{Text, char::Char, error::AddNodeError, formatting::C
 
 impl Text {
     /// Recursively adds the content of a Markdown AST `Node` to this `Text`,
-    /// applying the given formatting and preserving styles such as bold and italic.
+    /// applying and inheriting the given formatting.
+    ///
+    /// Formatting is inherited through the AST hierarchy: nested elements
+    /// combine their formatting with the parent's formatting. For example,
+    /// bold text with a color inherits both bold and color when nested.
+    /// Link URLs are parsed as hex colors and applied to all nested text.
     pub fn add_node(
-        &mut self, 
-        node: &Node, 
+        &mut self,
+        node: &Node,
         formatting: CharFormatting
     ) -> Result<(), Box<dyn Error>> {
         match node {

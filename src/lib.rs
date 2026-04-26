@@ -1,3 +1,47 @@
+//! # textbox
+//!
+//! An elegant utility for slotting text and images into named slots in templates.
+//!
+//! ## Quick Start
+//!
+//! ```no_run
+//! use textbox::{TextBox, TextArea, ImageArea, TextBoxRender, Align};
+//! use image::open;
+//! use pixelset::Color;
+//!
+//! # fn main() -> Result<(), Box<dyn std::error::Error>> {
+//! // Load your template image
+//! let template = open("template.png")?;
+//!
+//! // Create a TextBox with named components
+//! let textbox = TextBox::new(template)
+//!     .text_component("title", TextArea::new(
+//!         (10, 10),
+//!         500,
+//!         Color::rgb(0, 0, 0),
+//!         ab_glyph::FontArc::try_from_slice(include_bytes!("font.ttf"))?,
+//!         20.0,
+//!         Align::Center
+//!     ));
+//!
+//! // Populate components and render
+//! let render = TextBoxRender::new()
+//!     .text("title", "Hello, World!");
+//!
+//! let result = textbox.render(render)?;
+//! # Ok(())
+//! # }
+//! ```
+//!
+//! ## Overview
+//!
+//! A `TextBox` consists of:
+//! - A **template image** — your background or base design
+//! - A list of **components** — named placeholders defining where content goes
+//!
+//! Components can be either text areas or image overlays. At render time, you provide
+//! values for each named component, and `TextBox` composites them onto the template.
+
 use image::DynamicImage;
 use crate::{component::{ImageComponent, TextBoxComponent, TextComponent}, error::ComponentNotFoundError, imagearea::ImageArea, textarea::TextArea};
 
