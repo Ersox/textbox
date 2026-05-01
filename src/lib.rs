@@ -42,7 +42,8 @@
 //! Components can be either text areas or image overlays. At render time, you provide
 //! values for each named component, and `TextBox` composites them onto the template.
 
-use image::DynamicImage;
+use path_image::PathImage;
+use serde::{Deserialize, Serialize};
 use crate::{component::{ImageComponent, TextBoxComponent, TextComponent}, error::ComponentNotFoundError, imagearea::ImageArea, textarea::TextArea};
 
 pub use crate::render::TextBoxRender;
@@ -66,17 +67,17 @@ mod error;
 ///
 /// A `TextBox` acts as a declarative template, allowing you to insert text and
 /// images into predefined slots to render an image.
-#[derive(Clone)]
+#[derive(Clone, Serialize, Deserialize)]
 pub struct TextBox {
     /// The template that components are rendered onto.
-    pub template: DynamicImage,
+    pub template: PathImage,
     /// The list of components that make up this template.
     pub components: Vec<TextBoxComponent>
 }
 
 impl TextBox {
     /// Creates an empty `TextBox` from a template with no components.
-    pub fn new(template: DynamicImage) -> Self {
+    pub fn new(template: PathImage) -> Self {
         Self {
             template,
             components: vec![]

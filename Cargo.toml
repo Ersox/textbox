@@ -4,7 +4,7 @@ description = "An elegant utility for slotting text/images into named slots in t
 license = "MIT"
 repository = "https://github.com/Ersox/textbox"
 authors = [ "Ersox" ]
-version = "0.5.2"
+version = "0.6.0"
 edition = "2024"
 
 [dependencies]
@@ -12,5 +12,7 @@ ab_glyph = "0.2.32"
 image = "0.25.9"
 imageproc = "0.25.0"
 markdown = "1.0.0"
-pixelset = "0.7.0"
+pixelset = "0.9.2"
 thiserror = "2.0.17"
+serde = { version = "1.0.228", features = ["derive"] }
+path-image = "0.1.1"

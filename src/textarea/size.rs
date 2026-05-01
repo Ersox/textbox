@@ -13,7 +13,7 @@ pub struct Bounds {
 impl TextArea {
     /// Returns the pixel size of the given text at this scale.
     pub fn size(&self, text: impl ToString) -> Bounds {
-        let (width, height) = text_size(self.scale, &self.font, &text.to_string());
+        let (width, height) = text_size(*self.scale, &*self.font, &text.to_string());
         Bounds {
             width,
             height

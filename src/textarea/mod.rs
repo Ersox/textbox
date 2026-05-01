@@ -1,8 +1,12 @@
 use ab_glyph::{FontArc, PxScale};
+use path_image::PathFont;
 use pixelset::Color;
+use serde::{Deserialize, Serialize};
 
 pub use crate::textarea::align::Align;
+pub use crate::textarea::scale::Scale;
 
+mod scale;
 mod text;
 mod lines;
 mod size;
@@ -10,7 +14,7 @@ mod align;
 mod draw;
 
 /// A configurable text drawing area with wrapping and alignment.
-#[derive(Clone)]
+#[derive(Clone, Serialize, Deserialize)]
 pub struct TextArea {
     /// Starting X coordinate of the text box.
     pub x: u32,
@@ -19,9 +23,9 @@ pub struct TextArea {
     /// Maximum width allowed before wrapping.
     pub max_width: u32,
     /// Font scale used for rendering text.
-    pub scale: PxScale,
+    pub scale: Scale,
     /// Font used when drawing text.
-    pub font: FontArc,
+    pub font: PathFont,
     /// Horizontal alignment of each line.
     pub align: Align,
     /// Color to draw the text in.
@@ -34,8 +38,8 @@ impl TextArea {
         (x, y): (u32, u32), 
         max_width: u32, 
         color: Color,
-        font: FontArc, 
-        scale: impl Into<PxScale>,
+        font: PathFont, 
+        scale: impl Into<Scale>,
         align: Align
     ) -> Self {
         Self {

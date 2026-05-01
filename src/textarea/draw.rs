@@ -41,7 +41,7 @@ impl TextArea {
                 image, 
                 char.formatting.color.unwrap_or(self.color).into(), 
                 x, y, 
-                self.scale, 
+                *self.scale, 
                 &font, 
                 &char.value.to_string()
             );

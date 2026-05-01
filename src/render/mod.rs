@@ -88,6 +88,6 @@ impl TextBox {
             }
         }
 
-        Ok(image)
+        Ok(image.clone_image())
     }
 }

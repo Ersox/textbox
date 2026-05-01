@@ -1,7 +1,8 @@
 use image::{DynamicImage, imageops::{FilterType, overlay}};
+use serde::{Deserialize, Serialize};
 
 /// A configurable image overlaying area with resizing.
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Serialize, Deserialize)]
 pub struct ImageArea {
     /// Starting X coordinate of the text box.
     pub x: u32,
