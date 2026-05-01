@@ -1,5 +1,7 @@
 use std::{collections::HashMap, error::Error};
 use image::DynamicImage;
+use path_image::PathImage;
+use serde::{Deserialize, Serialize};
 use crate::{TextBox, component::TextBoxComponent, error::TextBoxRenderError, render::value::TextBoxComponentValue};
 
 mod value;
@@ -9,7 +11,7 @@ mod value;
 ///
 /// This maps component names to the `TextBoxComponentValue` that will be
 /// substituted during rendering.
-#[derive(Clone)]
+#[derive(Clone, Serialize, Deserialize)]
 pub struct TextBoxRender {
     /// Mapping of component names to their assigned values.
     pub map: HashMap<String, TextBoxComponentValue>
@@ -42,7 +44,7 @@ impl TextBoxRender {
     /// Inserts an image value for the component with the given name.
     ///
     /// Returns `self` to support method chaining.
-    pub fn image(mut self, name: &str, image: DynamicImage) -> Self {
+    pub fn image(mut self, name: &str, image: PathImage) -> Self {
         self.map.insert(
             name.to_owned(),
             TextBoxComponentValue::Image(image)
