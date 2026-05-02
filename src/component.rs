@@ -1,4 +1,4 @@
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize, ser};
 
 use crate::{imagearea::ImageArea, textarea::TextArea};
 
@@ -29,6 +29,7 @@ pub struct ImageComponent {
 /// Each component is identified by name and can accept a corresponding value
 /// when rendering a `TextBox`.
 #[derive(Clone, Serialize, Deserialize)]
+#[serde(tag = "type", rename_all = "lowercase")]
 pub enum TextBoxComponent {
     /// A text rendering component.
     Text(TextComponent),

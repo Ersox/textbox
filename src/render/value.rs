@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 /// Components may expect either text or an image, and this enum is used to
 /// store whichever type of value the caller provides.
 #[derive(Clone, Serialize, Deserialize)]
+#[serde(tag = "type", rename_all = "lowercase", content = "value")]
 pub enum TextBoxComponentValue {
     /// A textual value for a text component.
     Text(String),

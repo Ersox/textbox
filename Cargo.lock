@@ -139,6 +139,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "base64"
+version = "0.22.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6"
+
+[[package]]
 name = "bit_field"
 version = "0.10.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -761,10 +767,11 @@ dependencies = [
 
 [[package]]
 name = "pixelset"
-version = "0.9.2"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5df897fffecec5fdfeb4f62c344ba01851d657e44da670d4809d10c36e7c64d5"
+checksum = "5bdf6623d3ed0c15de5f70ad05838f941d57a51f253135035760052470b54938"
 dependencies = [
+ "base64",
  "image",
  "radsort",
  "rustc-hash",
@@ -1148,7 +1155,7 @@ dependencies = [
 
 [[package]]
 name = "textbox"
-version = "0.7.0"
+version = "0.7.1"
 dependencies = [
  "ab_glyph",
  "image",
