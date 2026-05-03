@@ -755,21 +755,22 @@ checksum = "35fb2e5f958ec131621fdd531e9fc186ed768cbe395337403ae56c17a74c68ec"
 
 [[package]]
 name = "path-image"
-version = "0.1.1"
+version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "07fa0feb0ad31200791803a43a5e08fc7097b1c16b903c94a3e7a368a8652258"
+checksum = "6728d6a78269353e384e7e9415d1ca1a44ac50af2a17a26fedccb7f8881fbc74"
 dependencies = [
  "ab_glyph",
  "image",
  "serde",
  "serde_json",
+ "thiserror",
 ]
 
 [[package]]
 name = "pixelset"
-version = "0.9.3"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5bdf6623d3ed0c15de5f70ad05838f941d57a51f253135035760052470b54938"
+checksum = "5ab9ba37811f5300bc837b2d2033e7cbe83808195cacf1df783f36e8c25a4fa6"
 dependencies = [
  "base64",
  "image",
@@ -1155,7 +1156,7 @@ dependencies = [
 
 [[package]]
 name = "textbox"
-version = "0.7.1"
+version = "0.7.2"
 dependencies = [
  "ab_glyph",
  "image",
